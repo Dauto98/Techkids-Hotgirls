@@ -1,0 +1,24 @@
+{
+  "name": "techkids-hotgirls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dauto98/Techkids-Hotgirls.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dauto98/Techkids-Hotgirls/issues"
+  },
+  "homepage": "https://github.com/Dauto98/Techkids-Hotgirls#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.3"
+  }
+}
