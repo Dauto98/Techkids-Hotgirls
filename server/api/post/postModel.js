@@ -17,6 +17,6 @@ let post = mongoose.Schema({
 	description : String,
 	like				: [likeSchema],
 	comment			: [commentSchema]
-});
+}, {timestamp : true});
 
 module.exports = mongoose.model('post', post);

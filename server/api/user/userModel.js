@@ -13,7 +13,7 @@ let user = mongoose.Schema({
 	},
 	salt			: String,
 	password	: String
-});
+}, {timestamp : true});
 
 /**
  * Pre-save hook
@@ -134,4 +134,4 @@ user.methods = {
   }
 };
 
-module.exports = mongoose.model('user', user, {timestamp : true});
+module.exports = mongoose.model('user', user);

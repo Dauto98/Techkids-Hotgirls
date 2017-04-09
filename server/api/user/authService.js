@@ -3,7 +3,7 @@ let configs = require('../../configs/index.js');
 
 module.exports = {
 	authentication	:	function(req, res, next){
-		jwt.verify(req.header.authorization, configs.secret, (err, decoded) => {
+		jwt.verify(req.headers.authorization, configs.secret, (err, decoded) => {
 			if (err) {
 				res.json({status: false, message: err});
 			} else {

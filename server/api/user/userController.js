@@ -15,5 +15,15 @@ module.exports = {
 				};
 			});
 		};
+	},
+
+	getAll : (req, res) => {
+		User.find().exec((err, data) => {
+			if (err) {
+				res.json({message: err});
+			} else {
+				res.json(data);
+			}
+		})
 	}
 }
