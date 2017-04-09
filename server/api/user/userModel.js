@@ -13,7 +13,7 @@ let user = mongoose.Schema({
 	},
 	salt			: String,
 	password	: String
-}, {timestamp : true});
+}, {timestamps : true});
 
 /**
  * Pre-save hook

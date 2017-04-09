@@ -1,22 +1,37 @@
 let mongoose = require('mongoose');
 
-let likeSchema = mongoose.Schema({
-	username	: {
-		type		: String,
-		unique	: true
-	}
-},{_id : false});
-
-let commentSchema = mongoose.Schema({
-	username : String,
-	body 		 : String
-},{_id : false});
-
 let post = mongoose.Schema({
-	imgage			: String,
-	description : String,
-	like				: [likeSchema],
-	comment			: [commentSchema]
-}, {timestamp : true});
+	author		: {
+		type	: mongoose.Schema.Types.ObjectId,
+		ref		: 'user'
+	},
+	imageUrl	: String,
+	title			: String,
+	content 	: String,
+	category	: String,
+	view			: {
+		type		: Number,
+		default : 0
+	},
+	like				: [{
+		type	: mongoose.Schema.Types.ObjectId,
+		ref		: 'user'
+	}],
+	comment			: [{
+		author : {
+			type	: mongoose.Schema.Types.ObjectId,
+			ref		: 'user'
+		},
+		content : String,
+		isDeleted	: {
+			type 		: Boolean,
+			default	: false
+		}
+	}],
+	isDeleted		: {
+		type		: Boolean,
+		default	: false
+	}
+}, {timestamps : true});
 
 module.exports = mongoose.model('post', post);
